@@ -37,8 +37,8 @@ game.GameOverScreen = me.ScreenObject.extend({
 		
 		var gImage1 = me.loader.getImage('again');
         me.game.world.addChild(new me.SpriteObject(
-                me.video.getWidth()/2 - gImage.width/2,
-                me.video.getHeight()/2 - gImage.height/2 - 10,
+                me.video.getWidth()/2 - gImage1.width/2,
+                me.video.getHeight()/2 - gImage1.height/2 - 10,
                 gImage1
         ), 12);
 
