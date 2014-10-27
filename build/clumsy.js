@@ -47,6 +47,7 @@ game.resources = [
     {name: "ground", type:"image", src: "data/img/ground.png"},
     {name: "gameover", type:"image", src: "data/img/gameover.png"},
     {name: "gameoverbg", type:"image", src: "data/img/gameoverbg.png"},
+	{name: "again", type:"image", src: "data/img/again.png"},
     {name: "hit", type:"image", src: "data/img/hit.png"},
     {name: "getready", type:"image", src: "data/img/getready.png"},
     {name: "new", type:"image", src: "data/img/new.png"},
@@ -416,7 +417,6 @@ game.TitleScreen = me.ScreenObject.extend({
     },
 
     onResetEvent: function() {
-        me.audio.stop("theme");
         game.data.newHiScore = false;
         me.game.world.addChild(new BackgroundLayer('bg', 1));
 
@@ -577,7 +577,7 @@ game.GameOverScreen = me.ScreenObject.extend({
         var gImage = me.loader.getImage('gameover');
         me.game.world.addChild(new me.SpriteObject(
                 me.video.getWidth()/2 - gImage.width/2,
-                me.video.getHeight()/2 - gImage.height/2 - 100,
+                me.video.getHeight()/2 - gImage.height/2 - 25,
                 gImage
         ), 12);
 
