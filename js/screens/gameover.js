@@ -34,13 +34,6 @@ game.GameOverScreen = me.ScreenObject.extend({
                 me.video.getHeight()/2 - gImage.height/2 - 100,
                 gImage
         ), 12);
-		
-		var gImage1 = me.loader.getImage('again');
-        me.game.world.addChild(new me.SpriteObject(
-                me.video.getWidth()/2 - gImage1.width/2,
-                me.video.getHeight()/2 - gImage1.height/2 - 10,
-                gImage1
-        ), 12);
 
         var gImageBoard = me.loader.getImage('gameoverbg');
         me.game.world.addChild(new me.SpriteObject(
@@ -126,6 +119,5 @@ game.GameOverScreen = me.ScreenObject.extend({
         me.game.world.removeChild(this.ground1);
         me.game.world.removeChild(this.ground2);
         this.font = null;
-        me.audio.stop("theme");
     }
 });
