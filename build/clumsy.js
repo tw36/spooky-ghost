@@ -651,7 +651,7 @@ game.GameOverScreen = me.ScreenObject.extend({
                     context,
                     this.steps,
                     me.game.viewport.width/2 - stepsText.width/2 - 60,
-                    me.game.viewport.height/2 - 14
+                    me.game.viewport.height/2 + 14
                 );
 				
                 //top score
@@ -659,7 +659,7 @@ game.GameOverScreen = me.ScreenObject.extend({
                     context,
                     this.topSteps,
                     me.game.viewport.width/2 - stepsText.width/2 - 60,
-                    me.game.viewport.height/2 + 45
+                    me.game.viewport.height/2 + 75
                 );
 				
 				//play again text1
