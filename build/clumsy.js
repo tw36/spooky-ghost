@@ -666,16 +666,16 @@ game.GameOverScreen = me.ScreenObject.extend({
                 this.font.draw(
                     context,
                     this.replayMessage1,
-                    me.game.viewport.width/2 - replayText1.width/2 - 60,
-                    me.game.viewport.height/2 + 90
+                    me.game.viewport.width/2 - replayText1.width/2 - 30,
+                    me.game.viewport.height/2 + 105
                 );
 				
 				//play again text1
                 this.font.draw(
                     context,
                     this.replayMessage2,
-                    me.game.viewport.width/2 - replayText2.width/2 - 60,
-                    me.game.viewport.height/2 + 115
+                    me.game.viewport.width/2 - replayText2.width/2 - 30,
+                    me.game.viewport.height/2 + 140
                 );
 
             }
