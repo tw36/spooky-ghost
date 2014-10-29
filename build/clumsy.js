@@ -47,7 +47,7 @@ game.resources = [
     {name: "ground", type:"image", src: "data/img/ground.png"},
     {name: "gameover", type:"image", src: "data/img/gameover.png"},
     {name: "gameoverbg", type:"image", src: "data/img/gameoverbg.png"},
-	{name: "again", type:"image", src: "data/img/again.png"},
+//again button	{name: "again", type:"image", src: "data/img/again.png"},
     {name: "hit", type:"image", src: "data/img/hit.png"},
     {name: "getready", type:"image", src: "data/img/getready.png"},
     {name: "new", type:"image", src: "data/img/new.png"},
@@ -372,18 +372,18 @@ var Share = me.GUI_Object.extend({
     },
 
     onClick: function(event) {
-        var shareText = 'Just made ' + game.data.steps + ' steps on Clumsy Bird! Can you beat me? Try online here!';
-        var url = 'http://ellisonleao.github.io/clumsy-bird/';
+        var shareText = 'Just made ' + game.data.steps + ' steps on Tundra Bird! Can you beat me? Try online here!';
+        var url = 'http://twahl36.github.io/tundra-bird/';
         FB.ui(
             {
              method: 'feed',
-             name: 'My Clumsy Bird Score!',
+             name: 'My Tundra Bird Score!',
              caption: "Share to your friends",
              description: (
                     shareText
              ),
              link: url,
-             picture: 'http://ellisonleao.github.io/clumsy-bird/data/img/clumsy.png'
+             picture: 'http://twahl36.github.io/tundra-bird/data/img/clumsy.png'
             }
         );
         return false;
@@ -401,8 +401,8 @@ var Tweet = me.GUI_Object.extend({
     },
 
     onClick: function(event) {
-        var shareText = 'Just made ' + game.data.steps + ' steps on Clumsy Bird! Can you beat me? Try online here!';
-        var url = 'http://ellisonleao.github.io/clumsy-bird/';
+        var shareText = 'Just made ' + game.data.steps + ' steps on Tundra Bird! Can you beat me? Try online here!';
+        var url = 'http://twahl36.github.io/tundra-bird/';
         var hashtags = 'clumsybird,melonjs'
         window.open('https://twitter.com/intent/tweet?text=' + shareText + '&hashtags=' + hashtags + '&count=' + url + '&url=' + url, 'Tweet!', 'height=300,width=400')
         return false;
@@ -580,12 +580,12 @@ game.GameOverScreen = me.ScreenObject.extend({
                 gImage
         ), 12);
 		
-		 var gImage1 = me.loader.getImage('again');
+	/* ***AGAIN BUTTON***	 var gImage1 = me.loader.getImage('again');
         me.game.world.addChild(new me.SpriteObject(
                 me.video.getWidth()/2 - gImage1.width/2,
                 me.video.getHeight()/2 - gImage1.height/2 + 138,
                 gImage1
-        ), 12);
+        ), 12); */     
 
         var gImageBoard = me.loader.getImage('gameoverbg');
         me.game.world.addChild(new me.SpriteObject(
@@ -629,8 +629,8 @@ game.GameOverScreen = me.ScreenObject.extend({
                 // renderable
                 this.parent(new me.Vector2d(), 100, 100);
                 this.font = new me.Font('gamefont', 40, 'black', 'left');
-                this.steps = 'Steps: ' + game.data.steps.toString();
-                this.topSteps= 'Higher Step: ' + me.save.topSteps.toString();
+                this.steps = 'Score: ' + game.data.steps.toString();
+                this.topSteps= 'High Score: ' + me.save.topSteps.toString();
             },
 
             update: function (dt) {
@@ -640,6 +640,7 @@ game.GameOverScreen = me.ScreenObject.extend({
             draw: function (context) {
                 var stepsText = this.font.measureText(context, this.steps);
                 var topStepsText = this.font.measureText(context, this.topSteps);
+				var replayText = this.font.measureText(context, this.replayMessage);
 
                 var scoreText = this.font.measureText(context, this.score);
                 //steps
@@ -649,12 +650,21 @@ game.GameOverScreen = me.ScreenObject.extend({
                     me.game.viewport.width/2 - stepsText.width/2 - 60,
                     me.game.viewport.height/2
                 );
+				
                 //top score
                 this.font.draw(
                     context,
                     this.topSteps,
                     me.game.viewport.width/2 - stepsText.width/2 - 60,
                     me.game.viewport.height/2 + 50
+                );
+				
+				//play again text
+                this.font.draw(
+                    context,
+                    this.replayMessage,
+                    me.game.viewport.width/2 - replayText.width/2 - 60,
+                    me.game.viewport.height/2 + 30
                 );
 
             }
