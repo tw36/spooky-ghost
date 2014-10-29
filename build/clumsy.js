@@ -631,7 +631,8 @@ game.GameOverScreen = me.ScreenObject.extend({
                 this.font = new me.Font('gamefont', 40, 'black', 'left');
                 this.steps = 'Score: ' + game.data.steps.toString();
                 this.topSteps= 'High Score: ' + me.save.topSteps.toString();
-				this.replayMessage = 'Press space or click to try again!';
+				this.replayMessage1 = 'Press space or';
+				this.replayMessage2 = 'click to try again!';
             },
 
             update: function (dt) {
@@ -641,7 +642,8 @@ game.GameOverScreen = me.ScreenObject.extend({
             draw: function (context) {
                 var stepsText = this.font.measureText(context, this.steps);
                 var topStepsText = this.font.measureText(context, this.topSteps);
-				var replayText = this.font.measureText(context, this.replayMessage);
+				var replayText1 = this.font.measureText(context, this.replayMessage1);
+				var replayText2 = this.font.measureText(context, this.replayMessage2);
 
                 var scoreText = this.font.measureText(context, this.score);
                 //steps
@@ -660,12 +662,20 @@ game.GameOverScreen = me.ScreenObject.extend({
                     me.game.viewport.height/2 + 50
                 );
 				
-				//play again text
+				//play again text1
                 this.font.draw(
                     context,
-                    this.replayMessage,
-                    me.game.viewport.width/2 - replayText.width/2 - 60,
-                    me.game.viewport.height/2 + 70
+                    this.replayMessage1,
+                    me.game.viewport.width/2 - replayText1.width/2 - 60,
+                    me.game.viewport.height/2 + 90
+                );
+				
+				//play again text1
+                this.font.draw(
+                    context,
+                    this.replayMessage2,
+                    me.game.viewport.width/2 - replayText2.width/2 - 60,
+                    me.game.viewport.height/2 + 115
                 );
 
             }
