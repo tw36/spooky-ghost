@@ -631,6 +631,7 @@ game.GameOverScreen = me.ScreenObject.extend({
                 this.font = new me.Font('gamefont', 40, 'black', 'left');
                 this.steps = 'Score: ' + game.data.steps.toString();
                 this.topSteps= 'High Score: ' + me.save.topSteps.toString();
+				this.replayText = 'Press space or click to try again!';
             },
 
             update: function (dt) {
@@ -664,7 +665,7 @@ game.GameOverScreen = me.ScreenObject.extend({
                     context,
                     this.replayMessage,
                     me.game.viewport.width/2 - replayText.width/2 - 60,
-                    me.game.viewport.height/2 + 30
+                    me.game.viewport.height/2 - 50
                 );
 
             }
