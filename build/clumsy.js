@@ -322,7 +322,7 @@ game.HUD.ScoreItem = me.Renderable.extend({
         this.parent(new me.Vector2d(x, y), 10, 10);
 
         // local copy of the global score
-        this.stepsFont = new me.Font('gamefont', 80, '#000', 'center');
+        this.stepsFont = new me.Font('gamefont', 80, '#d3d3d3', 'center');
 
         // make sure we use screen coordinates
         this.floating = true;
@@ -628,7 +628,7 @@ game.GameOverScreen = me.ScreenObject.extend({
                 // zero size
                 // renderable
                 this.parent(new me.Vector2d(), 100, 100);
-                this.font = new me.Font('gamefont', 40, 'gray', 'left');
+                this.font = new me.Font('gamefont', 40, '#d3d3d3', 'left');
                 this.steps = 'Score: ' + game.data.steps.toString();
                 this.topSteps= 'High Score: ' + me.save.topSteps.toString();
 				this.replayMessage1 = 'Press space or';
