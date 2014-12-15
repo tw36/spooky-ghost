@@ -628,7 +628,7 @@ game.GameOverScreen = me.ScreenObject.extend({
                 // zero size
                 // renderable
                 this.parent(new me.Vector2d(), 100, 100);
-                this.font = new me.Font('gamefont', 40, '#d3d3d3', 'left');
+                this.font = new me.Font('gamefont', 40, 'black', 'left');
                 this.steps = 'Score: ' + game.data.steps.toString();
                 this.topSteps= 'High Score: ' + me.save.topSteps.toString();
 				this.replayMessage1 = 'Press space or';
