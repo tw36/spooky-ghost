@@ -489,7 +489,7 @@ game.PlayScreen = me.ScreenObject.extend({
     },
 
     onResetEvent: function() {
-      //  me.audio.stop("theme");
+        me.audio.stop("theme");
         if (!game.data.muted){
             me.audio.play("theme", true);
         }
