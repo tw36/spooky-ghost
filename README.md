@@ -3,7 +3,7 @@ Spooky Ghost
 
 A MelonJS made "Flappy Bird" clone.
 
-![](http://i.imgur.com/Slbvt65.png)
+![](https://raw.githubusercontent.com/tw36/spooky-ghost/gh-pages/spooky-ghost.png)
 
 Play online at https://tw36.github.io/spooky-ghost/
 
